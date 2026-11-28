@@ -1,15 +1,12 @@
-import { useRef } from 'react';
 import { Download, FileText, Printer } from 'lucide-react';
 import { generatePDF } from '../utils/pdfGenerator';
 import { generateDOCX } from '../utils/docxGenerator';
 
-export default function ExportButtons({ examInfo, sections, onToast }) {
-  const printRef = useRef();
-
+export default function ExportButtons({ examInfo, sections, settings, onToast }) {
   async function handlePDF() {
     try {
       onToast('Generating PDF...', 'info');
-      await generatePDF(examInfo, sections);
+      await generatePDF(examInfo, sections, settings);
       onToast('PDF downloaded successfully!', 'success');
     } catch (e) {
       console.error(e);
@@ -60,4 +57,3 @@ export default function ExportButtons({ examInfo, sections, onToast }) {
     </div>
   );
 }
-

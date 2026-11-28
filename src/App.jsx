@@ -288,7 +288,7 @@ export default function App() {
               {/* Export Buttons (bottom of editor) */}
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
                 <h3 className="text-sm font-semibold text-gray-700 mb-3">Export Question Paper</h3>
-                <ExportButtons examInfo={examInfo} sections={sections} onToast={addToast} />
+                <ExportButtons examInfo={examInfo} sections={sections} settings={settings} onToast={addToast} />
               </div>
             </div>
 
